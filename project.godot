@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ProyectoDeGrado"
+run/main_scene="uid://6aj81lpvwa30"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GeneralRules="*res://general_rules.gd"
+
+[layer_names]
+
+2d_physics/layer_1="enviroment"
+2d_physics/layer_2="Enemys"
+2d_physics/layer_5="ninja_frog"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

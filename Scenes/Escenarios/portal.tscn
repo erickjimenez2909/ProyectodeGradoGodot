@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://by46hnws0a8ie"]
+
+[ext_resource type="Script" uid="uid://bep3vx74ddmg4" path="res://Scenes/Escenarios/portal.gd" id="1_lsm6f"]
+[ext_resource type="Texture2D" uid="uid://dmrmbef64smie" path="res://assets/Other/Dimensional_Portal.png" id="1_v7f02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsm6f"]
+atlas = ExtResource("1_v7f02")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cvsk"]
+atlas = ExtResource("1_v7f02")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brooi"]
+atlas = ExtResource("1_v7f02")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vnh4"]
+atlas = ExtResource("1_v7f02")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fco6"]
+atlas = ExtResource("1_v7f02")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqvjo"]
+atlas = ExtResource("1_v7f02")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgc3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsm6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cvsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brooi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vnh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fco6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqvjo")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcmo8"]
+size = Vector2(3, 14.6563)
+
+[node name="portal" type="Node2D" groups=["portal"]]
+script = ExtResource("1_lsm6f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16.75, 18)
+scale = Vector2(2.26563, 2.881)
+sprite_frames = SubResource("SpriteFrames_xgc3e")
+animation = &"portal"
+autoplay = "portal"
+frame_progress = 0.137243
+
+[node name="area_teletransport" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_teletransport"]
+position = Vector2(19.5, 57.3281)
+shape = SubResource("RectangleShape2D_kcmo8")
+
+[connection signal="area_entered" from="area_teletransport" to="." method="_on_area_teletransport_area_entered"]
