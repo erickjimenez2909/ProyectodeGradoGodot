@@ -5,6 +5,7 @@ const JUMP_VELOCITY = GeneralRules.FrogJumpPower
 var health = 100
 var fruitCount = 0
 var direction
+var block_ninja = false 
 var allow_animation:bool = false
 var leaved_floor: bool = false
 var had_jump: bool = false
@@ -19,6 +20,8 @@ func _ready():
 	$rayCast_walljump.target_position.x = ray_cast_dimension
 
 func _physics_process(delta: float) -> void:
+	
+	if block_ninja: return
 	
 	if is_on_floor():
 		leaved_floor = false

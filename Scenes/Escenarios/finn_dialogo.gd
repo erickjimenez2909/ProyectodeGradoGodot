@@ -37,3 +37,5 @@ func _on_timer_timeout() -> void:
 
 func _on_timer_esconde_dialogo_timeout() -> void:
 	visible = false
+	$Label.text = ""
+	index = 0
