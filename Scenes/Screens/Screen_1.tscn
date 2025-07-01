@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://6aj81lpvwa30"]
+[gd_scene load_steps=23 format=3 uid="uid://6aj81lpvwa30"]
 
 [ext_resource type="PackedScene" uid="uid://bqq5chcpc35uc" path="res://Scenes/Escenarios/escenario_1.tscn" id="1_jvwkk"]
 [ext_resource type="PackedScene" uid="uid://d2crbusuy2w4s" path="res://Scenes/Characters/ninja_frog.tscn" id="2_o68uk"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c2061qn5xigul" path="res://Scenes/Screens/PlayerInfo.tscn" id="9_7gend"]
 [ext_resource type="PackedScene" uid="uid://by46hnws0a8ie" path="res://Scenes/Escenarios/portal.tscn" id="10_0kcls"]
 [ext_resource type="Script" uid="uid://55a1udb0am67" path="res://Scenes/Screens/inciar_cut_scene_1.gd" id="11_idrhn"]
+[ext_resource type="PackedScene" uid="uid://bb7v4br5fkrni" path="res://Scenes/Escenarios/copas.tscn" id="13_ix67o"]
+[ext_resource type="Script" uid="uid://bhtwnmfn4gnj6" path="res://Scenes/Screens/hud.gd" id="13_q6cgg"]
 
 [sub_resource type="Curve2D" id="Curve2D_21u7t"]
 _data = {
@@ -119,11 +121,12 @@ _data = {
 [node name="TileMap" parent="." instance=ExtResource("1_jvwkk")]
 
 [node name="ninja_frog" parent="." instance=ExtResource("2_o68uk")]
-position = Vector2(7201, 304)
+position = Vector2(77, 80)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_o68uk")]
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-190, 0)
 curve = SubResource("Curve2D_21u7t")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -164,7 +167,7 @@ autoplay = "RESET"
 position = Vector2(696, 456)
 
 [node name="trampoline" parent="." instance=ExtResource("6_uq13g")]
-position = Vector2(441, 420)
+position = Vector2(360, 473)
 
 [node name="SpikeBall" parent="." instance=ExtResource("7_tk4ix")]
 position = Vector2(3006, 393)
@@ -259,8 +262,10 @@ shape = SubResource("RectangleShape2D_0kcls")
 [node name="CanvasLayer" type="CanvasLayer" parent="inciar_cutScene1"]
 
 [node name="ColorRect" type="ColorRect" parent="inciar_cutScene1/CanvasLayer"]
-offset_right = 1181.0
-offset_bottom = 740.0
+offset_left = 194.0
+offset_top = 29.0
+offset_right = 1375.0
+offset_bottom = 769.0
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="inciar_cutScene1"]
@@ -268,5 +273,31 @@ libraries = {
 &"": SubResource("AnimationLibrary_u75lg")
 }
 
+[node name="Saw" parent="." instance=ExtResource("5_21u7t")]
+position = Vector2(1389, 122)
+
+[node name="Copas" parent="." instance=ExtResource("13_ix67o")]
+position = Vector2(1728, 189)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("13_q6cgg")
+
+[node name="MensajeEducativo" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 1.578
+anchor_top = 0.134
+anchor_right = 1.741
+anchor_bottom = 0.33
+offset_left = -13.8561
+offset_top = -10.832
+offset_right = 12.3679
+offset_bottom = 13.16
+
+[node name="Timer" type="Timer" parent="HUD"]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="body_entered" from="inciar_cutScene1" to="inciar_cutScene1" method="_on_body_entered"]
 [connection signal="animation_finished" from="inciar_cutScene1/AnimationPlayer" to="inciar_cutScene1" method="_on_animation_player_animation_finished"]
+[connection signal="copa_recogida" from="Copas" to="HUD" method="mostrar_mensaje"]
+[connection signal="timeout" from="HUD/Timer" to="HUD" method="_on_timer_timeout"]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://bb7v4br5fkrni"]
+
+[ext_resource type="Script" uid="uid://7xhjotuil5ir" path="res://copas.gd" id="1_on1wt"]
+[ext_resource type="Texture2D" uid="uid://dh3t5v4hk5o8l" path="res://assets/Items/Checkpoints/End/End (Pressed) (64x64).png" id="2_bhbbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ejqx"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8yt3"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5jeu"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ice4m"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdx3f"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5ipb"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvfob"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvpo8"]
+atlas = ExtResource("2_bhbbh")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s2uc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ejqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8yt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5jeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ice4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdx3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5ipb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvfob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvpo8")
+}],
+"loop": true,
+"name": &"copita",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh6tx"]
+size = Vector2(44, 35)
+
+[node name="Copas" type="Node2D"]
+script = ExtResource("1_on1wt")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="Copa" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_3s2uc")
+animation = &"copita"
+autoplay = "copita"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 7.5)
+shape = SubResource("RectangleShape2D_hh6tx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+
+[node name="Timer" type="Timer" parent="Area2D"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
