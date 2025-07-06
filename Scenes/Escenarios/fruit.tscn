@@ -437,7 +437,7 @@ script = ExtResource("1_aay4f")
 
 [node name="animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m4743")
-animation = &"apple"
+animation = &"collected"
 
 [node name="area_collect" type="Area2D" parent="."]
 collision_mask = 16

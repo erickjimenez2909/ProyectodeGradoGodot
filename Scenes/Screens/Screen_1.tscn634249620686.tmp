@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://6aj81lpvwa30"]
 
 [ext_resource type="PackedScene" uid="uid://bqq5chcpc35uc" path="res://Scenes/Escenarios/escenario_1.tscn" id="1_jvwkk"]
-[ext_resource type="Texture2D" uid="uid://b0dqt0yg3c8wl" path="res://assets/Other/MensajeCopas (2).png" id="2_ix67o"]
+[ext_resource type="Texture2D" uid="uid://cpdgv4shk7yiw" path="res://assets/Other/nubeDeDialogo.png" id="1_q6cgg"]
 [ext_resource type="PackedScene" uid="uid://d2crbusuy2w4s" path="res://Scenes/Characters/ninja_frog.tscn" id="2_o68uk"]
 [ext_resource type="PackedScene" uid="uid://ctxef67md34a3" path="res://assets/ParallaxBackground/parallax_background_1.tscn" id="3_o68uk"]
 [ext_resource type="PackedScene" uid="uid://b5gcd3djrdffh" path="res://Scenes/Escenarios/movingPlatform_1.tscn" id="4_avt20"]
@@ -122,36 +122,36 @@ follow_viewport_enabled = true
 script = ExtResource("13_q6cgg")
 
 [node name="MensajeNube" type="TextureRect" parent="HUD"]
-offset_left = 2519.0
-offset_top = 60.0
-offset_right = 2786.0
-offset_bottom = 195.0
-texture = ExtResource("2_ix67o")
+visible = false
+offset_left = 2469.0
+offset_top = 38.0
+offset_right = 2679.0
+offset_bottom = 189.0
+texture = ExtResource("1_q6cgg")
 expand_mode = 1
 flip_h = true
 
 [node name="MensajeLabel" type="Label" parent="HUD/MensajeNube"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 7.0
-offset_right = 257.0
-offset_bottom = 126.0
+offset_left = 26.0
+offset_top = 35.0
+offset_right = 265.0
+offset_bottom = 149.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "Mensaje prueba"
-autowrap_mode = 2
+text = "Mensaje prueba
+"
 
 [node name="PlayerInfo" parent="." instance=ExtResource("9_7gend")]
 
 [node name="TileMap" parent="." instance=ExtResource("1_jvwkk")]
 
 [node name="ninja_frog" parent="." instance=ExtResource("2_o68uk")]
-position = Vector2(94, 82)
+position = Vector2(2253, 178)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_o68uk")]
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(65, 215)
+position = Vector2(-190, 0)
 curve = SubResource("Curve2D_21u7t")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -210,10 +210,10 @@ position = Vector2(3998, 454)
 position = Vector2(5532, 337)
 
 [node name="fruit" parent="." instance=ExtResource("8_v7uen")]
-position = Vector2(2639, 466)
+position = Vector2(2744, 487)
 
 [node name="fruit2" parent="." instance=ExtResource("8_v7uen")]
-position = Vector2(2639, 517)
+position = Vector2(2651, 439)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_7gend")]
 
@@ -287,10 +287,10 @@ shape = SubResource("RectangleShape2D_0kcls")
 [node name="CanvasLayer" type="CanvasLayer" parent="inciar_cutScene1"]
 
 [node name="ColorRect" type="ColorRect" parent="inciar_cutScene1/CanvasLayer"]
-offset_left = 17.0
-offset_top = 7.0
-offset_right = 1198.0
-offset_bottom = 747.0
+offset_left = 1.0
+offset_top = -8.0
+offset_right = 1182.0
+offset_bottom = 732.0
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="inciar_cutScene1"]
@@ -302,48 +302,12 @@ libraries = {
 position = Vector2(1389, 122)
 
 [node name="Copa" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(364, 257)
-mensaje_personalizado = "Variable: Una variable es como una caja donde puedes guardar información."
+position = Vector2(2410, 187)
+mensaje_personalizado = "¡Has recogido la copa! asdasd"
 
 [node name="Copa2" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(974, 265)
-mensaje_personalizado = "Una variable puede cambiar su valor. ¡Por eso se llama ‘variable’!"
-
-[node name="Copa3" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(1557, 443)
-mensaje_personalizado = "Un dato tipo entero (int) representa números sin decimales."
-
-[node name="Copa4" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(1948, 508)
-mensaje_personalizado = "Un string es una cadena de texto, como tu nombre."
-
-[node name="Copa5" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(2642, 391)
-mensaje_personalizado = "Las estructuras condicionales permiten tomar decisiones: usa if para evaluar condiciones."
-
-[node name="Copa6" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(3374, 565)
-mensaje_personalizado = "Los bucles (for, while) repiten acciones hasta que se cumpla una condición."
-
-[node name="Copa7" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(4002, 410)
-mensaje_personalizado = "Los operadores lógicos (&&, ||, !) ayudan a combinar condiciones."
-
-[node name="Copa8" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(4346, 569)
-mensaje_personalizado = "Una función es un bloque de código que realiza una tarea específica.\"\"¡Divide y vencerás! Usa funciones para organizar tu código."
-
-[node name="Copa9" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(5108, 371)
-mensaje_personalizado = "En programación, resolver problemas paso a paso es clave."
-
-[node name="Copa10" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(5886, 408)
-mensaje_personalizado = "Comenta tu código para recordar qué hace cada parte."
-
-[node name="Copa11" parent="." instance=ExtResource("12_u75lg")]
-position = Vector2(6623, 410)
-mensaje_personalizado = "Usa nombres claros para tus variables. ¡Te entenderás mejor!"
+position = Vector2(2777, 567)
+mensaje_personalizado = "Epasdad"
 
 [connection signal="body_entered" from="inciar_cutScene1" to="inciar_cutScene1" method="_on_body_entered"]
 [connection signal="animation_finished" from="inciar_cutScene1/AnimationPlayer" to="inciar_cutScene1" method="_on_animation_player_animation_finished"]

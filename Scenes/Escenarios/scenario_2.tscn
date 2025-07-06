@@ -1245,8 +1245,7 @@ autoplay = "run"
 curve = SubResource("Curve2D_cxmo5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(398.662, 250.167)
-progress = 36.12
+position = Vector2(362.542, 250.167)
 
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
 position = Vector2(24.0803, -39.4649)

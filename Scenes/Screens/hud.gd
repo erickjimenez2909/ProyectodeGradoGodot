@@ -1,16 +1,15 @@
 extends CanvasLayer
 
-@onready var mensaje_label := $MensajeEducativo
-@onready var timer := $Timer
-
-func mostrar_mensaje(texto: String):
+func mostrar_mensaje(texto: String, posicion: Vector2) -> void:
+	var mensaje_nube = get_node("MensajeNube")
+	var mensaje_label = mensaje_nube.get_node("MensajeLabel")
 	mensaje_label.text = texto
-	mensaje_label.visible = true
-	timer.start()  # Comienza un conteo para ocultar el mensaje después
 
-func _on_Timer_timeout():
-	mensaje_label.visible = false
+	# Ajusta el offset: centra la nube horizontalmente y la sube un poco para que aparezca encima de la copa
+	mensaje_nube.position = posicion + Vector2(-mensaje_nube.size.x / 2, -mensaje_nube.size.y - 60)
 
+	mensaje_nube.visible = true
 
-func _on_copas_copa_recogida(mensaje: Variant) -> void:
-	pass # Replace with function body.
+	await get_tree().create_timer(4.0).timeout
+	mensaje_nube.visible = false
+	print("La nube se ocultó después del tiempo")
