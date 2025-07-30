@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://xelrukxsnsv2"]
+
+[ext_resource type="Script" uid="uid://cph8jvianecq2" path="res://Scenes/Menu/Scripts/video.gd" id="1_5b7ul"]
+[ext_resource type="Texture2D" uid="uid://1ly5eqba164s" path="res://Scenes/Menu/Images/Fondo.png" id="2_72aeq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b7ul"]
+bg_color = Color(0.28485, 0.28485, 0.28485, 0.568627)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47xui"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 0.792157)
+
+[node name="Video" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5b7ul")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_72aeq")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -64.0
+offset_right = 164.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Pantallamode" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b7ul")
+text = "Modo De pantalla"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Ventana"
+popup/item_0/id = 0
+popup/item_1/text = "Pantalla Completa"
+popup/item_1/id = 1
+
+[node name="Volver" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_47xui")
+text = "Volver"
+
+[connection signal="item_selected" from="VBoxContainer/GridContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="VBoxContainer/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="VBoxContainer/Volver" to="." method="_on_quit_pressed"]

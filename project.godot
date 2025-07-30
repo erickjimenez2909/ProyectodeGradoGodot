@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="ProyectoDeGrado"
-run/main_scene="uid://6aj81lpvwa30"
+run/main_scene="uid://b58s0sv7s7vem"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GeneralRules="*res://general_rules.gd"
+
+[display]
+
+window/size/mode=3
 
 [layer_names]
 

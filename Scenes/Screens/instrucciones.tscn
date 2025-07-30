@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyrhq03vcfnfn"]
+
+[ext_resource type="Script" uid="uid://oglih5g8f8vs" path="res://control.gd" id="1_evcf4"]
+[ext_resource type="Texture2D" uid="uid://qv6oofcjowc7" path="res://assets/Other/MensajeCopas.png" id="2_nl0ah"]
+
+[node name="Instrucciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evcf4")
+
+[node name="MensajeCopas" type="Sprite2D" parent="."]
+position = Vector2(446, 233)
+scale = Vector2(0.716604, 0.768456)
+texture = ExtResource("2_nl0ah")
+
+[node name="TituloLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 97.0
+offset_right = 508.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "INSTRUCCIONES"
+
+[node name="TextoInstrucciones" type="Label" parent="."]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 128.0
+offset_right = 638.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Controles:
+- Usa las flechas para moverte
+- Presiona ESPACIO para saltar
+
+🎯 Objetivo:
+- Esquiva obstáculos y recoge las copas 
+- Cada copa enseña algo de programación básica"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 331.0
+offset_right = 523.0
+offset_bottom = 362.0
+text = "EMPEZAR A JUGAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

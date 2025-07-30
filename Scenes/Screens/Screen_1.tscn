@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://6aj81lpvwa30"]
+[gd_scene load_steps=26 format=3 uid="uid://6aj81lpvwa30"]
 
 [ext_resource type="PackedScene" uid="uid://bqq5chcpc35uc" path="res://Scenes/Escenarios/escenario_1.tscn" id="1_jvwkk"]
-[ext_resource type="Texture2D" uid="uid://b0dqt0yg3c8wl" path="res://assets/Other/MensajeCopas (2).png" id="2_ix67o"]
+[ext_resource type="Texture2D" uid="uid://qv6oofcjowc7" path="res://assets/Other/MensajeCopas.png" id="2_ix67o"]
 [ext_resource type="PackedScene" uid="uid://d2crbusuy2w4s" path="res://Scenes/Characters/ninja_frog.tscn" id="2_o68uk"]
 [ext_resource type="PackedScene" uid="uid://ctxef67md34a3" path="res://assets/ParallaxBackground/parallax_background_1.tscn" id="3_o68uk"]
 [ext_resource type="PackedScene" uid="uid://b5gcd3djrdffh" path="res://Scenes/Escenarios/movingPlatform_1.tscn" id="4_avt20"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://55a1udb0am67" path="res://Scenes/Screens/inciar_cut_scene_1.gd" id="11_idrhn"]
 [ext_resource type="PackedScene" uid="uid://05phagmlejsb" path="res://Scenes/Escenarios/copa.tscn" id="12_u75lg"]
 [ext_resource type="Script" uid="uid://bhtwnmfn4gnj6" path="res://Scenes/Screens/hud.gd" id="13_q6cgg"]
+[ext_resource type="PackedScene" uid="uid://dyrhq03vcfnfn" path="res://Scenes/Screens/instrucciones.tscn" id="15_lbcrj"]
+[ext_resource type="Script" path="res://Scenes/Screens/instrucciones.gd" id="16_crqup"]
 
 [sub_resource type="Curve2D" id="Curve2D_21u7t"]
 _data = {
@@ -210,10 +212,12 @@ position = Vector2(3998, 454)
 position = Vector2(5532, 337)
 
 [node name="fruit" parent="." instance=ExtResource("8_v7uen")]
-position = Vector2(2639, 466)
+visible = false
+position = Vector2(367, 273)
 
 [node name="fruit2" parent="." instance=ExtResource("8_v7uen")]
-position = Vector2(2639, 517)
+visible = false
+position = Vector2(1554, 451)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_7gend")]
 
@@ -344,6 +348,51 @@ mensaje_personalizado = "Comenta tu código para recordar qué hace cada parte."
 [node name="Copa11" parent="." instance=ExtResource("12_u75lg")]
 position = Vector2(6623, 410)
 mensaje_personalizado = "Usa nombres claros para tus variables. ¡Te entenderás mejor!"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Instrucciones" parent="CanvasLayer2" instance=ExtResource("15_lbcrj")]
+offset_left = 462.0
+offset_top = 83.0
+offset_right = 462.0
+offset_bottom = 83.0
+script = ExtResource("16_crqup")
+
+[node name="fruit3" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(1947, 514)
+
+[node name="fruit4" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(2643, 400)
+
+[node name="fruit5" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(3376, 574)
+
+[node name="fruit6" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(4002, 417)
+
+[node name="fruit7" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(4343, 576)
+
+[node name="fruit8" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(5110, 387)
+
+[node name="fruit9" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(5886, 413)
+
+[node name="fruit10" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(6622, 419)
+
+[node name="fruit11" parent="." instance=ExtResource("8_v7uen")]
+visible = false
+position = Vector2(979, 280)
 
 [connection signal="body_entered" from="inciar_cutScene1" to="inciar_cutScene1" method="_on_body_entered"]
 [connection signal="animation_finished" from="inciar_cutScene1/AnimationPlayer" to="inciar_cutScene1" method="_on_animation_player_animation_finished"]

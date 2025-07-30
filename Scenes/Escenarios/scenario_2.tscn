@@ -117,7 +117,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_cxmo5"]
 resource_name = "act1"
-length = 60.0
+length = 70.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -125,7 +125,7 @@ tracks/0/path = NodePath("animaciones:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 55, 60),
+"times": PackedFloat32Array(0, 2, 63, 70),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(50, 320.401), Vector2(200, 320.401), Vector2(200, 320.401), Vector2(50, 320.401)]
@@ -137,7 +137,7 @@ tracks/1/path = NodePath("animaciones:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2, 55),
+"times": PackedFloat32Array(2, 63),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"idle", &"run"]
@@ -173,10 +173,10 @@ tracks/4/path = NodePath("robotDialogo:texto")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(7, 12, 20, 24.9931, 30, 35, 40, 45, 50),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(9, 20, 30, 35, 40, 45, 50, 58),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["Alto ahí, joven programador! Antes de continuar, debes entender el poder de las variables.", "Son como cofres mágicos: guardan información que puedes usar más adelante.", "Imagina que tienes un cofre con tu nombre grabado: “nombre”.", "Dentro, colocas un pergamino que dice “Finn”.", "Siempre que necesites recordar tu nombre, solo abres ese cofre.", "Así funciona una variable. Le das un nombre, y guardas algo dentro.", "Puede ser un número, una palabra, o incluso una lista de hechizos.", "¡Por supuesto!", "Abres el cofre, sacas el contenido, y colocas uno nuevo."]
+"values": ["Alto ahí, joven programador!, Quiero felicitarte, ¡Lo lograste! Has superado todos los obstáculos y recogido las copas del saber.", "La programación se basa en estos fundamentos y a traves de ellos debemos resolver problemas, pensar con lógica y aprender de los errores.", "Ahora es momento de crear. Todo gran programador empieza con pequeños bloques.", "Pero recuerda algo importante...", "Habrá errores que no entenderás al principio, días en los que sientas que no avanzas.", "Pero eso no significa que hayas fallado. Significa que estás aprendiendo.", "Lo importante no es saber todo, sino seguir adelante, seguir preguntando, seguir creando.", "Exactamente. Cada error es un paso más cerca de ser mejor. Sigue adelante y continua aprendiendo."]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -185,10 +185,10 @@ tracks/5/path = NodePath("finnDialogo:texto")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(4, 17.024, 43, 53),
+"times": PackedFloat32Array(4, 16, 27.0333, 55),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["¿Qué es este lugar? Todo parece... extraño.", "¿Cofres mágicos? ¿Cómo los uso?", "¿Y puedo cambiar lo que hay dentro?", "De acuerdo, ¡Estoy listo para guardar y usar todo lo que aprenda!"]
+"values": ["¿Qué es este lugar? Todo parece... extraño.", "¡Sí! Aprendí sobre variables, decisiones y repeticiones. ¡Y todo jugando!", "¿Y ahora qué sigue?", "¡Entonces no me rendiré! Aunque me equivoque... ¡voy a seguir programando!"]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -197,7 +197,7 @@ tracks/6/path = NodePath("animaciones:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 55),
+"times": PackedFloat32Array(0, 63),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -209,7 +209,7 @@ tracks/7/path = NodePath("ColorRect:color")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 55, 57.8667),
+"times": PackedFloat32Array(0, 65.0333, 70),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -833,7 +833,7 @@ tracks/0/path = NodePath("AnimatedSprite2DRobot:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 55, 60),
+"times": PackedFloat32Array(0, 2, 63, 70),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(711.846, 319.064), Vector2(630, 319.064), Vector2(630, 319.064), Vector2(711, 319.064)]
@@ -845,7 +845,7 @@ tracks/1/path = NodePath("AnimatedSprite2DRobot:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 55, 62),
+"times": PackedFloat32Array(0, 2, 63, 70),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [&"walk", &"idle", &"walk", &"walk"]
@@ -857,7 +857,7 @@ tracks/2/path = NodePath("AnimatedSprite2DRobot:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 55),
+"times": PackedFloat32Array(0, 63),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -1245,7 +1245,8 @@ autoplay = "run"
 curve = SubResource("Curve2D_cxmo5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(362.542, 250.167)
+position = Vector2(398.662, 250.167)
+progress = 36.12
 
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
 position = Vector2(24.0803, -39.4649)
